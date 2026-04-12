@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/a860a211d3.js" crossorigin="anonymous"></script>
 
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <link rel="stylesheet" href="assets/css/font_sans_serif.css">
   <link rel="stylesheet" href="assets/css/theme-luka.css">
 </head>
@@ -62,7 +63,7 @@
       <div class="section" id="about">
         <h2 class="section-title">About Me</h2>
         <div class="section-body">
-          <p>I am <strong>Yufei Xue</strong> (薛宇飞).</p>
+          <p>I am <strong>Yufei Xue</strong> (薛宇飞). I pursue <span id="typed" style="font-weight:600; color:var(--accent-color);"></span></p>
           <p>I am currently a Ph.D. candidate at the <strong>Hong Kong University of Science and Technology</strong> supervised by <a href="https://eejzhang.people.ust.hk/" target="_blank" rel="noopener">Prof. Jun Zhang</a>. I received my B.E. degree with honors from <strong>Southeast University</strong> in 2024. My research interests lie in <strong>Efficient LLMs</strong>, with a particular emphasis on model compression and sparse inference.</p>
           <p><strong><a href="assets/cv/CV-Yufei-260401.pdf" target="_blank" rel="noopener">Download my CV</a></strong></p>
         </div>
@@ -306,6 +307,21 @@
         });
       }
     })();
+
+    new Typed('#typed', {
+      strings: [
+        'lightweight models.',
+        'extreme inference acceleration.',
+        'high iteration efficiency.',
+        'vibe coding.',
+        'concise ideas.'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1000,
+      startDelay: 500,
+      loop: true
+    });
   </script>
 </body>
 </html>
