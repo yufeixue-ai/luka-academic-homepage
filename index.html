@@ -37,9 +37,10 @@
   <div class="wrapper">
     <header class="sidebar">
       <div class="profile-card">
-        <a class="image avatar">
+        <div class="image avatar">
           <img src="assets/img/avatar.png" alt="Yufei Xue">
-        </a>
+          <span class="avatar-bubble" id="avatarBubble"></span>
+        </div>
 
         <h1 class="site-name">Yufei Xue</h1>
         <p class="site-email">yufei.xue@connect.ust.hk</p>
@@ -274,6 +275,45 @@
       themeToggle.addEventListener('click', function() {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         setTheme(!isDark);
+      });
+
+      // Avatar thinking bubble
+      var thinkingWords = [
+        'Whatchamacalliting\u2026', 'Schlepping\u2026', 'Imaging\u2026', 'Philosophising\u2026',
+        'Scampering\u2026', 'Smooshing\u2026', 'Gusting\u2026', 'Stewing\u2026',
+        'Rummaging\u2026', 'Fiddling\u2026', 'Noodling\u2026', 'Puttering\u2026',
+        'Tinkering\u2026', 'Moseying\u2026', 'Galumphing\u2026', 'Tootling\u2026',
+        'Bumbling\u2026', 'Waddling\u2026', 'Dithering\u2026', 'Dawdling\u2026',
+        'Lollygagging\u2026', 'Pottering\u2026', 'Meandering\u2026', 'Splattering\u2026',
+        'Squelching\u2026', 'Clanking\u2026', 'Thwacking\u2026', 'Clomping\u2026',
+        'Plonking\u2026', 'Sloshing\u2026', 'Whirring\u2026', 'Fizzing\u2026',
+        'Sizzling\u2026', 'Whooshing\u2026', 'Plopping\u2026', 'Kerplunking\u2026',
+        'Thudding\u2026', 'Bonking\u2026', 'Snuggling\u2026', 'Nuzzling\u2026',
+        'Scooching\u2026', 'Squishing\u2026', 'Fluffing\u2026', 'Booping\u2026',
+        'Toddling\u2026', 'Doodling\u2026', 'Wiggling\u2026', 'Jiggling\u2026',
+        'Snoozing\u2026', 'Cooing\u2026', 'Tiptoeing\u2026', 'Pootling\u2026',
+        'Mooching\u2026', 'Bamboozling\u2026', 'Discombobulating\u2026',
+        'Flabbergasting\u2026', 'Hornswoggling\u2026', 'Cattywampusing\u2026',
+        'Flibbertigibbeting\u2026', 'Skedaddling\u2026', 'Absquatulating\u2026',
+        'Hullaballooing\u2026', 'Kerfuffling\u2026', 'Fumbling\u2026', 'Stumbling\u2026',
+        'Blundering\u2026', 'Floundering\u2026', 'Bungling\u2026', 'Tottering\u2026',
+        'Shambling\u2026', 'Lumbering\u2026', 'Clambering\u2026', 'Careening\u2026',
+        'Trundling\u2026', 'Plodding\u2026', 'Schlumping\u2026', 'Skulking\u2026',
+        'Lurking\u2026', 'Sidling\u2026', 'Slinking\u2026', 'Pilfering\u2026',
+        'Finagling\u2026', 'Weaseling\u2026', 'Snooping\u2026', 'Sniffling\u2026',
+        'Cadging\u2026'
+      ];
+      var avatarEl = document.querySelector('.image.avatar');
+      var bubbleEl = document.getElementById('avatarBubble');
+      function pickRandomWord() {
+        return thinkingWords[Math.floor(Math.random() * thinkingWords.length)];
+      }
+      avatarEl.addEventListener('mouseenter', function() {
+        bubbleEl.textContent = pickRandomWord();
+      });
+      avatarEl.addEventListener('click', function(e) {
+        e.preventDefault();
+        bubbleEl.textContent = pickRandomWord();
       });
 
       if ('IntersectionObserver' in window) {

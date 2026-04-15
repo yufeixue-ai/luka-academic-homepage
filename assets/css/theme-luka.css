@@ -169,6 +169,8 @@ body.theme-luka .profile-card {
 body.theme-luka .image.avatar {
   display: block;
   margin: 0 auto 28px;
+  position: relative;
+  cursor: pointer;
 }
 
 body.theme-luka .image.avatar img {
@@ -179,6 +181,54 @@ body.theme-luka .image.avatar img {
   background-color: var(--luka-bg);
   box-shadow: 0 6px 24px var(--luka-shadow);
   transition: background-color 0.3s ease;
+}
+
+body.theme-luka .avatar-bubble {
+  position: absolute;
+  top: 0;
+  right: -14px;
+  background: rgba(26, 25, 23, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--luka-accent);
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+body.theme-luka .avatar-bubble::before {
+  content: '> ';
+  opacity: 0.5;
+}
+
+body.theme-luka .avatar-bubble::after {
+  content: '\2588';
+  animation: blink-cursor 1s step-end infinite;
+  margin-left: 1px;
+  font-weight: 400;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0; }
+}
+
+body.theme-luka .image.avatar:hover .avatar-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 body.theme-luka .site-name {
