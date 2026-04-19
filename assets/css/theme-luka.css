@@ -238,6 +238,14 @@ body.theme-luka .site-name {
   line-height: 1.2;
 }
 
+body.theme-luka .site-role {
+  margin: 0 0 10px;
+  color: var(--luka-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 body.theme-luka .site-email {
   margin: 0 0 24px;
   color: var(--luka-secondary);
@@ -272,28 +280,50 @@ body.theme-luka .social-icons a:hover {
   transform: translateY(-2px);
 }
 
-body.theme-luka .visitor-card {
-  margin: 40px auto 0;
-  width: 240px;
-  padding: 18px 16px;
-  border: 1px dashed var(--luka-border);
-  border-radius: 14px;
-  color: var(--luka-secondary);
-  text-align: left;
+body.theme-luka .research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
 }
 
-body.theme-luka .visitor-card-title {
-  margin-bottom: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--luka-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+body.theme-luka .research-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--luka-social-bg);
+  color: var(--luka-secondary);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+body.theme-luka .visitor-card {
+  margin: 28px auto 0;
+  padding-top: 20px;
+  width: 240px;
+  border-top: 1px dashed var(--luka-border);
+  color: var(--luka-secondary);
+  text-align: center;
 }
 
 body.theme-luka .visitor-card-body {
   font-size: 13px;
   line-height: 1.6;
+}
+
+body.theme-luka .visitor-card-caption {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--luka-secondary);
+  text-align: center;
+  letter-spacing: normal;
+  text-transform: none;
+  opacity: 0.75;
 }
 
 body.theme-luka .content {
@@ -602,7 +632,7 @@ body.theme-luka strong {
   body.theme-luka .visitor-card {
     width: 100%;
     max-width: 280px;
-    padding: 14px 12px;
+    padding-top: 18px;
   }
 
   body.theme-luka .content {
